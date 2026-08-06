@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Астролог Мария — консультации</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -12,10 +19,12 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Montserrat', 'Georgia', 'Times New Roman', serif;
+            font-weight: 400;
             color: #f5efe6;
             padding: 40px 20px;
             line-height: 1.6;
+            font-size: 16px;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
@@ -80,10 +89,75 @@
             z-index: 2;
         }
 
-        /* ===== ШАПКА ===== */
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        /* МАНДАЛА */
+        .mandala-container {
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mandala-svg {
+            width: 100%;
+            height: 100%;
+            animation: rotateMandala 20s linear infinite;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+        }
+
+        @keyframes rotateMandala {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .mandala-center {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #fff 0%, #d4af37 50%, transparent 70%);
+            border-radius: 50%;
+            animation: pulseCenter 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        @keyframes pulseCenter {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 1; }
+        }
+
+        .mandala-ring {
+            position: absolute;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            animation: pulseRing 3s ease-in-out infinite;
+        }
+
+        .mandala-ring:nth-child(2) { width: 100px; height: 100px; animation-delay: 0s; }
+        .mandala-ring:nth-child(3) { width: 130px; height: 130px; animation-delay: 0.5s; }
+        .mandala-ring:nth-child(4) { width: 160px; height: 160px; animation-delay: 1s; }
+
+        @keyframes pulseRing {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.6; }
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
         .header-title {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 54px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 42px;
             font-weight: 700;
             color: #ffffff;
             text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
@@ -93,43 +167,66 @@
         }
 
         .header-title .name {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Playfair Display', 'Georgia', serif;
             font-weight: 700;
             color: #ffffff;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
         }
 
         .subtitle {
-            font-size: 20px;
-            color: rgba(245, 239, 230, 0.7);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #ffffff;
             font-weight: 400;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
             text-align: left;
         }
 
-        .divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #d4af37, #e8c87a);
-            border-radius: 4px;
-            margin: 15px 0 30px 0;
+        /* НАВИГАЦИЯ */
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
+        .nav-link {
+            color: #e8c87a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            padding: 8px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .nav-link:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: #e8c87a;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* БЛОК ОБО МНЕ */
         .about-block {
             display: flex;
             gap: 35px;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(4px);
+            background: rgba(11, 14, 35, 0.85);
+            backdrop-filter: blur(12px);
             border-radius: 24px;
             padding: 25px 30px;
             margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .about-block img {
-            width: 450px;
-            height: 450px;
+            width: 380px;
+            height: 380px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid rgba(212, 175, 55, 0.3);
@@ -137,18 +234,11 @@
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
         }
 
-        .about-text .role {
-            font-size: 16px;
-            color: #d4af37;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            font-weight: 400;
-        }
-
         .about-text p {
-            font-size: 21px;
-            color: rgba(245, 239, 230, 0.95);
-            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            color: #ffffff;
+            line-height: 1.6;
             margin-bottom: 14px;
             font-weight: 400;
         }
@@ -169,26 +259,29 @@
             margin: 30px 0 20px 0;
         }
 
+        /* КАРТОЧКИ УСЛУГ */
         .service-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(4px);
+            background: rgba(11, 14, 35, 0.85);
+            backdrop-filter: blur(12px);
             padding: 22px 25px;
             border-radius: 18px;
             border-left: 3px solid rgba(212, 175, 55, 0.25);
             transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             flex-direction: column;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 20px rgba(212, 175, 55, 0.03);
         }
 
         .service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.20);
-            border-color: rgba(212, 175, 55, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.5), 0 0 35px rgba(212, 175, 55, 0.06);
+            background: rgba(20, 24, 50, 0.9);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .service-card h3 {
+            font-family: 'Playfair Display', 'Georgia', serif;
             font-size: 24px;
             color: #e8c87a;
             margin-bottom: 10px;
@@ -197,6 +290,7 @@
         }
 
         .service-card .format {
+            font-family: 'Montserrat', sans-serif;
             font-size: 15px;
             color: #ffffff;
             margin-bottom: 10px;
@@ -205,46 +299,50 @@
         }
 
         .service-card p {
-            font-size: 20px;
-            color: rgba(245, 239, 230, 0.85);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            color: #ffffff;
             font-weight: 400;
             margin-bottom: 10px;
         }
 
         .service-card ul {
             text-align: left;
-            padding-left: 20px;
+            padding-left: 0px;
             margin: 10px 0 0 0;
-            font-size: 19px;
-            color: rgba(245, 239, 230, 0.85);
+            font-size: 16px;
+            color: #ffffff;
             flex: 1;
             list-style: none;
         }
 
         .service-card ul li {
-            margin-bottom: 8px;
-            padding-left: 20px;
+            margin-bottom: 10px;
+            padding-left: 25px;
             position: relative;
             font-weight: 400;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .service-card ul li::before {
-            content: '•';
-            color: rgba(212, 175, 55, 0.3);
+            content: '●';
+            color: #d4af37;
+            font-size: 16px;
             font-weight: bold;
             position: absolute;
             left: 0;
+            top: 2px;
         }
 
         .service-card .info-line {
             margin-top: 12px;
             padding: 10px 14px;
-            background: rgba(212, 175, 55, 0.04);
+            background: rgba(212, 175, 55, 0.06);
             border-radius: 12px;
-            color: rgba(245, 239, 230, 0.7);
-            font-size: 17px;
+            color: #ffffff;
+            font-size: 15px;
             font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .service-card .info-line strong {
@@ -254,14 +352,15 @@
 
         .price-tag {
             margin-top: 14px;
-            padding: 12px 16px;
-            background: rgba(212, 175, 55, 0.08);
+            padding: 10px 16px;
+            background: rgba(212, 175, 55, 0.1);
             border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             text-align: center;
-            font-size: 22px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
             font-weight: 600;
-            color: #f5efe6;
+            color: #ffffff;
         }
 
         .price-tag span {
@@ -269,96 +368,111 @@
             font-weight: 600;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 30px 0 20px 0;
+        /* КАРУСЕЛЬ */
+        .carousel-wrapper {
+            position: relative;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 30px auto 20px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(11, 14, 35, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 8px;
         }
 
-        .gallery-grid img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 18px;
-            border: 2px solid rgba(212, 175, 55, 0.1);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            transition: 0.3s;
-            cursor: pointer;
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
         }
 
-        .gallery-grid img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.2);
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            top: 0;
-            left: 0;
+        .carousel-slide img {
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(10px);
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
+            object-fit: cover;
+            display: block;
+            border-radius: 14px;
+            transition: 0.3s;
         }
 
-        .modal.active {
-            display: flex;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-            object-fit: contain;
-            animation: zoomIn 0.3s ease;
-        }
-
-        @keyframes zoomIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .modal-close {
+        .carousel-btn {
             position: absolute;
-            top: 25px;
-            right: 35px;
-            font-size: 40px;
-            color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            background: rgba(11, 14, 35, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #e8c87a;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 20px;
             cursor: pointer;
             transition: 0.3s;
-            background: none;
-            border: none;
-            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            line-height: 1;
         }
 
-        .modal-close:hover {
-            opacity: 1;
-            transform: rotate(90deg);
+        .carousel-btn:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.6);
+            color: #fff;
         }
 
+        .carousel-prev { left: 16px; }
+        .carousel-next { right: 16px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            cursor: pointer;
+            transition: 0.3s;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background: #d4af37;
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* КАК ПОПАСТЬ НА КОНСУЛЬТАЦИЮ */
         .how-to-detailed {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(4px);
+            background: rgba(11, 14, 35, 0.85);
+            backdrop-filter: blur(12px);
             border-radius: 20px;
             padding: 25px 30px;
             margin: 20px 0 25px 0;
             border-left: 3px solid rgba(212, 175, 55, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .how-to-detailed h2 {
-            font-size: 25px;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 26px;
             color: #e8c87a;
             margin-bottom: 18px;
             font-weight: 700;
@@ -374,27 +488,29 @@
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            font-size: 20px;
-            color: rgba(245, 239, 230, 0.85);
-            margin-bottom: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            color: #ffffff;
+            margin-bottom: 12px;
             padding: 12px 18px;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
             transition: 0.3s;
             font-weight: 400;
+            line-height: 1.6;
         }
 
         .how-to-detailed ul li:hover {
-            background: rgba(212, 175, 55, 0.04);
-            border-color: rgba(212, 175, 55, 0.08);
+            background: rgba(212, 175, 55, 0.06);
+            border-color: rgba(212, 175, 55, 0.1);
         }
 
         .how-to-detailed ul li .num {
             font-weight: 600;
             color: #d4af37;
-            font-size: 18px;
-            min-width: 32px;
+            font-size: 20px;
+            min-width: 40px;
             flex-shrink: 0;
         }
 
@@ -408,7 +524,8 @@
             padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
-            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.15);
             font-weight: 400;
         }
@@ -418,13 +535,13 @@
             bottom: 110px;
             right: 32px;
             z-index: 100;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(11, 14, 35, 0.8);
             backdrop-filter: blur(10px);
             color: white;
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: none;
             align-items: center;
             justify-content: center;
@@ -435,7 +552,7 @@
         }
 
         .btn-up:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(212, 175, 55, 0.2);
             transform: translateY(-3px);
         }
 
@@ -443,24 +560,101 @@
             display: flex;
         }
 
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        /* КНОПКИ */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px 30px;
+            border-radius: 50px;
+            border: none;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .btn .icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .btn-telegram {
+            background-color: #1FA2E1;
+            box-shadow: 0 6px 20px rgba(31, 162, 225, 0.35);
+        }
+        .btn-telegram:hover {
+            transform: translateY(-3px);
+            background-color: #2db2f0;
+            box-shadow: 0 10px 30px rgba(31, 162, 225, 0.5);
+        }
+
+        .btn-max {
+            background-color: #7E3AF2;
+            box-shadow: 0 6px 20px rgba(126, 58, 242, 0.35);
+        }
+        .btn-max:hover {
+            transform: translateY(-3px);
+            background-color: #9050ff;
+            box-shadow: 0 10px 30px rgba(126, 58, 242, 0.5);
+        }
+
+        /* АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ */
         @media (max-width: 700px) {
             .container { padding: 25px 20px; }
-            .header-title { font-size: 34px; text-align: center; }
-            .subtitle { text-align: center; }
-            .divider { margin: 15px auto 30px; }
+            .header-wrapper { flex-direction: column; text-align: center; gap: 15px; }
+            .mandala-container { width: 100px; height: 100px; }
+            .header-title { font-size: 32px; text-align: center; }
+            .subtitle { font-size: 16px; text-align: center; }
+            .nav-links { gap: 12px; }
+            .nav-link { font-size: 15px; padding: 6px 14px; }
             .about-block { flex-direction: column; text-align: center; }
-            .about-block img { width: 180px; height: 180px; }
-            .about-text p { text-align: left; font-size: 18px; }
+            .about-block img { width: 200px; height: 200px; }
+            .about-text p { text-align: left; font-size: 16px; }
             .services-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr; max-width: 100%; }
-            .gallery-grid img { height: 200px; }
-            .modal img { max-width: 95%; max-height: 80%; }
+            .service-card h3 { font-size: 22px; }
+            .service-card p { font-size: 16px; }
+            .service-card ul { font-size: 15px; }
+            .carousel-wrapper { max-width: 100%; padding: 6px; }
+            .carousel-btn { width: 36px; height: 36px; font-size: 16px; }
+            .carousel-slide { aspect-ratio: 3 / 2; }
             .btn-up { bottom: 90px; right: 22px; width: 46px; height: 46px; font-size: 18px; }
+            
+            .button-group { max-width: 100%; }
+            .btn { font-size: 16px; padding: 14px 20px; }
+            
+            .mandala-ring:nth-child(2) { width: 70px; height: 70px; }
+            .mandala-ring:nth-child(3) { width: 95px; height: 95px; }
+            .mandala-ring:nth-child(4) { width: 120px; height: 120px; }
         }
 
         @media (max-width: 450px) {
-            .gallery-grid { grid-template-columns: 1fr; }
-            .about-block img { width: 140px; height: 140px; }
+            .about-block img { width: 150px; height: 150px; }
+            .mandala-container { width: 90px; height: 90px; }
+            .header-title { font-size: 28px; }
+            .nav-link { font-size: 14px; padding: 5px 10px; }
         }
     </style>
 </head>
@@ -468,55 +662,104 @@
 
     <video autoplay muted loop playsinline id="bg-video">
         <source src="video.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
     </video>
 
     <div class="stars" id="stars"></div>
 
-    <button class="btn-up" id="btnUp">↑</button>
+    <button class="btn-up" id="btnUp" aria-label="Наверх">↑</button>
 
     <div class="container">
 
-        <h1 class="header-title">✨ Астролог <span class="name">✨ Мария</span></h1>
-        <p class="subtitle">Взрослые и дети. Приходите за ясностью.</p>
-
-        <div class="divider"></div>
-
-        <div class="about-block">
-            <img src="photo.jpg" alt="Моё фото">
-            <div class="about-text">
-                <div class="role">✦ классическая школа астрологии</div>
-                <p>
-                    Я — <span class="highlight">профессиональный астролог</span>. За плечами — два года обучения в школе классической астрологии, медицинское образование и опыт в маркетинге и продажах.
-                </p>
-                <p>
-                    Такой путь научил меня видеть человека <span class="highlight">системно</span>: не просто как набор планет в карте, а как живую, дышащую личность со своим запросом, болью и потенциалом.
-                </p>
-                <p>
-                    Я работаю без эзотерики, по фактам. Моя задача — не предсказывать, а <span class="highlight">показать структуру</span> вашей жизни: где ресурсы, где опоры, где зоны роста.
-                </p>
-                <p>
-                    Мне важно, чтобы вы ушли с консультации <span class="highlight">не с иллюзиями, а с ясностью</span>.
-                </p>
+        <div class="header-wrapper">
+            <div class="mandala-container">
+                <svg class="mandala-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(212, 175, 55, 0.15)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="0.5" stroke-dasharray="8 4"/>
+                    
+                    <path d="M 100 15 A 85 85 0 0 1 185 100" fill="none" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1.5"/>
+                    <path d="M 100 185 A 85 85 0 0 1 15 100" fill="none" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1.5"/>
+                    <path d="M 185 100 A 85 85 0 0 1 100 185" fill="none" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1"/>
+                    <path d="M 15 100 A 85 85 0 0 1 100 15" fill="none" stroke="rgba(212, 175, 55, 0.3)" stroke-width="1"/>
+                    
+                    <ellipse cx="100" cy="100" rx="60" ry="25" fill="none" stroke="rgba(212, 175, 55, 0.25)" stroke-width="0.8" transform="rotate(30 100 100)"/>
+                    <ellipse cx="100" cy="100" rx="60" ry="25" fill="none" stroke="rgba(212, 175, 55, 0.25)" stroke-width="0.8" transform="rotate(-30 100 100)"/>
+                    <ellipse cx="100" cy="100" rx="60" ry="25" fill="none" stroke="rgba(212, 175, 55, 0.25)" stroke-width="0.8" transform="rotate(90 100 100)"/>
+                    
+                    <polygon points="100,30 108,60 140,60 115,78 125,110 100,92 75,110 85,78 60,60 92,60" 
+                             fill="none" stroke="rgba(212, 175, 55, 0.5)" stroke-width="1.5"/>
+                    
+                    <circle cx="150" cy="75" r="3" fill="#d4af37" opacity="0.8"/>
+                    <circle cx="50" cy="125" r="2.5" fill="#d4af37" opacity="0.7"/>
+                    <circle cx="135" cy="135" r="2" fill="#e8c87a" opacity="0.6"/>
+                    <circle cx="65" cy="65" r="2" fill="#e8c87a" opacity="0.6"/>
+                    
+                    <circle cx="100" cy="100" r="8" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+                    <circle cx="100" cy="100" r="4" fill="#d4af37" opacity="0.8"/>
+                    <circle cx="100" cy="100" r="2" fill="#fff" opacity="0.9"/>
+                    
+                    <line x1="100" y1="85" x2="100" y2="75" stroke="rgba(212, 175, 55, 0.4)" stroke-width="0.8"/>
+                    <line x1="100" y1="115" x2="100" y2="125" stroke="rgba(212, 175, 55, 0.4)" stroke-width="0.8"/>
+                    <line x1="85" y1="100" x2="75" y2="100" stroke="rgba(212, 175, 55, 0.4)" stroke-width="0.8"/>
+                    <line x1="115" y1="100" x2="125" y2="100" stroke="rgba(212, 175, 55, 0.4)" stroke-width="0.8"/>
+                    
+                    <circle cx="160" cy="40" r="1" fill="#fff" opacity="0.5"/>
+                    <circle cx="170" cy="100" r="1.5" fill="#fff" opacity="0.4"/>
+                    <circle cx="140" cy="160" r="1" fill="#fff" opacity="0.5"/>
+                    <circle cx="60" cy="160" r="1.5" fill="#fff" opacity="0.4"/>
+                    <circle cx="30" cy="100" r="1" fill="#fff" opacity="0.5"/>
+                    <circle cx="40" cy="40" r="1" fill="#fff" opacity="0.4"/>
+                </svg>
+                <div class="mandala-center"></div>
+                <div class="mandala-ring"></div>
+                <div class="mandala-ring"></div>
+                <div class="mandala-ring"></div>
+            </div>
+            
+            <div class="header-content">
+                <h1 class="header-title">✨ Астролог <span class="name">✨ Мария</span></h1>
+                <p class="subtitle">Помогу обрести ясность в жизненной ситуации</p>
             </div>
         </div>
 
-        <h2 style="font-size: 28px; margin-top: 10px; color: #e8c87a; font-weight: 700;">🌙 Мои услуги</h2>
+        <!-- НАВИГАЦИЯ ПО РАЗДЕЛАМ (БЕЗ ЗНАЧКОВ) -->
+        <div class="nav-links">
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#services" class="nav-link">Услуги</a>
+            <a href="#gallery" class="nav-link">Галерея</a>
+            <a href="#howto" class="nav-link">Как попасть на консультацию</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </div>
+
+        <!-- Обо мне -->
+        <div id="about" class="about-block">
+            <img src="photo.jpg" alt="Мария - астролог">
+            <div class="about-text">
+                <p>Меня зовут Мария.</p>
+                <p>Я — <span class="highlight">профессиональный астролог</span> с медицинским и маркетинговым образованием. За плечами — два года консультирования и обучения в школе классической астрологии, плюс большой опыт работы, который научил меня понимать, чего человек хочет на самом деле.</p>
+                <p>Такой путь научил меня видеть человека <span class="highlight">системно</span>: не просто как набор планет в карте, а как живую, дышащую личность со своим запросом, болью и потенциалом.</p>
+                <p>Я работаю без эзотерики, по фактам. Моя задача — не предсказывать, а <span class="highlight">показать структуру</span> вашей жизни: где ресурсы, где опоры, где зоны роста.</p>
+                <p>Мне важно, чтобы вы ушли с консультации <span class="highlight">не с иллюзиями, а с ясностью</span>.</p>
+            </div>
+        </div>
+
+        <!-- Услуги -->
+        <h2 id="services" style="font-family: 'Playfair Display', 'Georgia', serif; font-size: 32px; margin-top: 10px; color: #e8c87a; font-weight: 700;">🌙 Мои услуги</h2>
 
         <div class="services-grid">
-
+            <!-- Взрослая консультация -->
             <div class="service-card">
                 <h3>🧑 Взрослая консультация</h3>
                 <div class="format">🎧 Формат: аудиозвонок в любом мессенджере</div>
                 <p><strong>Длительность:</strong> примерно 1,5 часа</p>
                 <ul>
-                    <li>На первой консультации я разбираю вашу натальную карту и делаю прогнозирование, смотрю самое яркое на ближайшие 2–3 года</li>
-                    <li>Все сферы жизни — здоровье, семья, мужья/жёны, любовники, дети, деньги, бизнес, карьера, друзья. Одну из сфер жизни рассматриваю более подробно — на ваш выбор</li>
-                    <li>А также характер, психологические аспекты, духовное развитие, кармическое предназначение и дополнительные вопросы</li>
+                    <li>Разбор натальной карты и прогнозирование на 2–3 года</li>
+                    <li>Все сферы жизни: здоровье, семья, отношения, деньги, бизнес, карьера</li>
+                    <li>Характер, психология, духовное развитие, предназначение</li>
                 </ul>
                 <div class="price-tag">💰 <span>5 000 ₽</span></div>
             </div>
 
+            <!-- Совместимость -->
             <div class="service-card">
                 <h3>💞 Совместимость</h3>
                 <div class="format">🎧 Формат: аудиозвонок в любом мессенджере</div>
@@ -524,38 +767,40 @@
                 <ul>
                     <li>Насколько гармонично вы сочетаетесь</li>
                     <li>Отношение партнёра к вам и браку</li>
-                    <li>Стоит ли связывать судьбу, отвечу на дополнительные вопросы, возникшие в процессе консультации</li>
+                    <li>Стоит ли связывать судьбу</li>
                 </ul>
                 <div class="price-tag">💰 <span>3 000 ₽</span></div>
             </div>
 
+            <!-- Детская консультация -->
             <div class="service-card">
                 <h3>👶 Детская консультация</h3>
                 <div class="format">🎧 Формат: аудиозвонок в любом мессенджере</div>
-                <p><strong>Возраст:</strong> 0–17 лет</p>
-                <p><strong>Длительность:</strong> примерно 1,5 часа</p>
+                <p><strong>Возраст:</strong> 0–17 лет | <strong>Длительность:</strong> ~1,5 часа</p>
                 <ul>
-                    <li>Темперамент и характер, слабые и сильные стороны характера ребёнка</li>
-                    <li>В каких сферах стоит проявлять таланты ребенка, какое обучение наиболее подходящее</li>
-                    <li>В чем будет проявляться жизненная позиция ребенка и как улучшить взаимопонимание</li>
-                    <li>Важные проблемы со здоровьем и наиболее полезный вид спорта</li>
+                    <li>Темперамент и характер ребёнка</li>
+                    <li>Таланты и подходящее обучение</li>
+                    <li>Как улучшить взаимопонимание</li>
+                    <li>Здоровье и спорт</li>
                 </ul>
                 <div class="price-tag">💰 <span>2 500 ₽</span></div>
             </div>
 
+            <!-- Годовой прогноз -->
             <div class="service-card">
                 <h3>📅 Годовой прогноз</h3>
                 <div class="format">🎧 Формат: аудиозвонок в любом мессенджере</div>
                 <p><strong>Длительность:</strong> примерно 1 час</p>
                 <ul>
-                    <li>События и тенденции на предстоящий год</li>
+                    <li>События и тенденции на год</li>
                     <li>Благоприятные и напряжённые периоды</li>
                     <li>Рекомендации по планированию</li>
                 </ul>
-                <div class="info-line" style="color: #ffffff; font-weight: 600;">💡 <strong>Рекомендую после первой консультации</strong></div>
+                <div class="info-line">💡 <strong>Рекомендую после первой консультации</strong></div>
                 <div class="price-tag">💰 <span>5 000 ₽</span></div>
             </div>
 
+            <!-- Хорарные вопросы -->
             <div class="service-card">
                 <h3>❓ Хорарные вопросы</h3>
                 <div class="format">🎧 Формат: аудиозвонок в любом мессенджере</div>
@@ -567,30 +812,56 @@
                 </ul>
                 <div class="price-tag">💰 <span>1 000 ₽</span></div>
             </div>
-
         </div>
 
-        <div class="gallery-grid">
-            <img src="photo1.jpg" alt="Фото 1" onclick="openModal(this)">
-            <img src="photo2.jpg" alt="Фото 2" onclick="openModal(this)">
+        <!-- Галерея (карусель) -->
+        <h2 id="gallery" style="font-family: 'Playfair Display', 'Georgia', serif; font-size: 32px; margin-top: 20px; color: #e8c87a; font-weight: 700; text-align: center;">📸 Галерея</h2>
+        
+        <div class="carousel-wrapper" id="carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide">
+                    <img src="photo1.jpg" alt="Фото 1" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                    <img src="photo2.jpg" alt="Фото 2" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                    <img src="photo3.jpg" alt="Фото 3" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                    <img src="photo4.jpg" alt="Фото 4" loading="lazy">
+                </div>
+            </div>
+            <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Предыдущее фото">‹</button>
+            <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Следующее фото">›</button>
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
 
-        <div class="how-to-detailed">
+        <!-- Как попасть на консультацию -->
+        <div id="howto" class="how-to-detailed">
             <h2>📋 Как попасть на консультацию</h2>
             <ul>
                 <li><span class="num">01</span> Выбрать вид консультации</li>
                 <li><span class="num">02</span> Прислать свои данные: имя, фамилию, телефон, дату, время и место рождения</li>
-                <li><span class="num">03</span> Оплатить консультацию. Информацию об оплате я дам вам лично в <strong>Telegram/мессенджере</strong></li>
+                <li><span class="num">03</span> Оплатить консультацию. Информацию об оплате я дам вам лично в мессенджере</li>
                 <li><span class="num">04</span> Записаться на консультацию, согласовать день и время</li>
             </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 35px;">
-            <a href="https://t.me/mashushabur?text=Здравствуйте! Хочу записаться на консультацию" target="_blank" style="display: inline-block; padding: 16px 45px; background: linear-gradient(135deg, #b8962e, #d4af37, #b8962e); background-size: 200% 200%; color: #ffffff; font-size: 19px; font-weight: 600; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15); transition: all 0.4s ease; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.06);">
-                 Записаться на консультацию
-            </a>
+        <!-- Контакты (кнопки записи) -->
+        <div id="contacts" class="cta-buttons">
+            <div class="button-group">
+                <a href="https://t.me/mashushabur?text=Здравствуйте! Хочу записаться на консультацию" target="_blank" class="btn btn-telegram">
+                    <span class="icon">✈️</span> Записаться в Telegram
+                </a>
+                
+                <a href="#" target="_blank" class="btn btn-max" title="Замените ссылку на ваш профиль в Max">
+                    <span class="icon">💜</span> Записаться в Max
+                </a>
+            </div>
         </div>
 
+        <!-- Соцсети -->
         <div style="text-align: center; margin-top: 20px; padding: 15px 20px;">
             <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
                 <a href="https://instagram.com/marica_masha" target="_blank" style="display: inline-block; padding: 8px 22px; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 30px; color: #f5efe6; text-decoration: none; font-size: 15px; font-weight: 500; transition: all 0.3s ease; background: rgba(212, 175, 55, 0.10);">
@@ -599,62 +870,36 @@
             </div>
         </div>
 
+        <!-- Футер -->
         <div class="footer-note">
             © 2026 Астролог / Консультации
         </div>
 
     </div>
 
-    <div class="modal" id="photoModal" onclick="closeModal()">
-        <button class="modal-close" onclick="closeModal()">✕</button>
-        <img id="modalImage" src="" alt="Увеличенное фото">
-    </div>
-
+    <!-- Скрипты -->
     <script>
-        (function createStars() {
-            const container = document.getElementById('stars');
-            const count = 200;
-
-            for (let i = 0; i < count; i++) {
-                const star = document.createElement('div');
+        // Создание звезд
+        (function() {
+            var container = document.getElementById('stars');
+            var count = 200;
+            for (var i = 0; i < count; i++) {
+                var star = document.createElement('div');
                 star.className = 'star';
-
-                if (Math.random() < 0.2) {
-                    star.classList.add('big');
-                }
-
-                const size = Math.random() * 3 + 1.5;
+                if (Math.random() < 0.2) star.classList.add('big');
+                var size = Math.random() * 3 + 1.5;
                 star.style.width = size + 'px';
                 star.style.height = size + 'px';
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
                 star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
                 star.style.animationDelay = (Math.random() * 5) + 's';
-
                 container.appendChild(star);
             }
         })();
 
-        function openModal(img) {
-            const modal = document.getElementById('photoModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.classList.add('active');
-            modalImg.src = img.src;
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('photoModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        const btnUp = document.getElementById('btnUp');
-
+        // Кнопка "Наверх"
+        var btnUp = document.getElementById('btnUp');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 400) {
                 btnUp.classList.add('show');
@@ -662,9 +907,85 @@
                 btnUp.classList.remove('show');
             }
         });
-
         btnUp.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Плавная прокрутка для всех якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Карусель
+        document.addEventListener('DOMContentLoaded', function() {
+            var track = document.getElementById('carouselTrack');
+            var slides = track.querySelectorAll('.carousel-slide');
+            var prevBtn = document.getElementById('carouselPrev');
+            var nextBtn = document.getElementById('carouselNext');
+            var dotsContainer = document.getElementById('carouselDots');
+            
+            var currentIndex = 0;
+            var totalSlides = slides.length;
+
+            dotsContainer.innerHTML = '';
+            for (var i = 0; i < totalSlides; i++) {
+                var dot = document.createElement('button');
+                dot.className = 'carousel-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', (function(index) {
+                    return function() { goToSlide(index); };
+                })(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            var dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+                
+                track.style.transform = 'translateX(-' + (index * 100) + '%)';
+                
+                dots.forEach(function(dot) { dot.classList.remove('active'); });
+                dots[index].classList.add('active');
+                
+                currentIndex = index;
+            }
+
+            function nextSlide() { goToSlide(currentIndex + 1); }
+            function prevSlide() { goToSlide(currentIndex - 1); }
+
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            var touchStartX = 0;
+            track.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            track.addEventListener('touchend', function(e) {
+                var touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) nextSlide();
+                if (touchEndX - touchStartX > 50) prevSlide();
+            }, { passive: true });
+
+            var autoplay = setInterval(nextSlide, 4000);
+            
+            var carouselWrapper = document.getElementById('carousel');
+            carouselWrapper.addEventListener('mouseenter', function() { clearInterval(autoplay); });
+            carouselWrapper.addEventListener('mouseleave', function() { autoplay = setInterval(nextSlide, 4000); });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
         });
     </script>
 
