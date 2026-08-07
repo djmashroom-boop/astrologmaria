@@ -283,16 +283,16 @@
         }
 
         .service-card {
-            background: rgba(11, 14, 35, 0.9);
+            background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(12px);
             padding: 24px 28px;
             border-radius: 18px;
             border-left: 3px solid rgba(212, 175, 55, 0.3);
             transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 0.8s ease forwards;
@@ -311,14 +311,14 @@
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.5), 0 0 35px rgba(212, 175, 55, 0.08);
-            background: rgba(20, 24, 50, 0.95);
-            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.4), 0 0 35px rgba(212, 175, 55, 0.08);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .service-card h3 {
             font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 24px;
+            font-size: 20px;
             color: #e8c87a;
             margin-bottom: 10px;
             font-weight: 700;
@@ -338,7 +338,7 @@
 
         .service-card p {
             font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             color: #ffffff;
             font-weight: 400;
             margin-bottom: 10px;
@@ -349,7 +349,7 @@
             text-align: left;
             padding-left: 0px;
             margin: 10px 0 0 0;
-            font-size: 17px;
+            font-size: 16px;
             color: #ffffff;
             flex: 1;
             list-style: none;
@@ -711,8 +711,8 @@
             .nav-links { gap: 12px; }
             .nav-link { font-size: 15px; padding: 5px 12px; }
             .about-block img { width: 220px; height: 220px; }
-            .service-card h3 { font-size: 22px; }
-            .service-card p, .service-card ul { font-size: 16px; }
+            .service-card h3 { font-size: 20px; }
+            .service-card p, .service-card ul { font-size: 15px; }
             .carousel-wrapper { max-width: 100%; padding: 6px; }
             .carousel-btn { width: 38px; height: 38px; font-size: 18px; }
             .carousel-slide { aspect-ratio: 3 / 2; }
@@ -736,7 +736,7 @@
             .sky-card .mark { height: 6px; }
             .nav-link { font-size: 13px; padding: 4px 10px; }
             .service-card { padding: 18px 18px; }
-            .service-card h3 { font-size: 20px; }
+            .service-card h3 { font-size: 18px; }
             .btn { font-size: 15px; padding: 12px 16px; }
             .carousel-btn { width: 32px; height: 32px; font-size: 16px; }
             .price-tag { font-size: 18px; }
@@ -878,8 +878,7 @@
             </div>
         </div>
 
-        <h2 id="gallery" style="text-align: center;">Галерея</h2>
-        
+        <!-- Заголовок "Галерея" убран, остался только блок с фото -->
         <div class="carousel-wrapper" id="carousel">
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-slide">
@@ -891,9 +890,7 @@
                 <div class="carousel-slide">
                     <img src="photo3.jpg" alt="Фото 3" loading="lazy">
                 </div>
-                <div class="carousel-slide">
-                    <img src="photo4.jpg" alt="Фото 4" loading="lazy">
-                </div>
+                <!-- 4-й слайд удалён -->
             </div>
             <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Предыдущее фото">‹</button>
             <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Следующее фото">›</button>
