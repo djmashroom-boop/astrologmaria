@@ -357,7 +357,7 @@
         }
 
         .service-card ul li {
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             padding-left: 25px;
             position: relative;
             font-weight: 400;
@@ -392,7 +392,7 @@
         }
 
         .price-tag {
-            margin-top: 14px;
+            margin-top: 20px;
             padding: 10px 16px;
             background: rgba(212, 175, 55, 0.15);
             border-radius: 12px;
@@ -401,17 +401,25 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
             font-weight: 700;
-            color: #ffffff;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+            color: #e8c87a;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .price-tag .price-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+            font-size: 16px;
+            text-shadow: none;
         }
 
         .price-tag span {
             color: #d4af37;
             font-weight: 700;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .carousel-wrapper {
@@ -592,7 +600,7 @@
             border: none;
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -713,6 +721,7 @@
             .about-block img { width: 220px; height: 220px; }
             .service-card h3 { font-size: 20px; }
             .service-card p, .service-card ul { font-size: 15px; }
+            .service-card ul li { margin-bottom: 12px; }
             .carousel-wrapper { max-width: 100%; padding: 6px; }
             .carousel-btn { width: 38px; height: 38px; font-size: 18px; }
             .carousel-slide { aspect-ratio: 3 / 2; }
@@ -737,6 +746,7 @@
             .nav-link { font-size: 13px; padding: 4px 10px; }
             .service-card { padding: 18px 18px; }
             .service-card h3 { font-size: 18px; }
+            .service-card ul li { margin-bottom: 10px; }
             .btn { font-size: 15px; padding: 12px 16px; }
             .carousel-btn { width: 32px; height: 32px; font-size: 16px; }
             .price-tag { font-size: 18px; }
@@ -823,7 +833,10 @@
                     <li>Рассматриваю все сферы жизни: здоровье, семья, отношения, брак, партнеры, деньги, бизнес, карьера</li>
                     <li>А также характер, психологические аспекты, духовное развитие, кармическое предназначение и дополнительные вопросы</li>
                 </ul>
-                <div class="price-tag">Стоимость: <span>5 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>5 000 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -835,7 +848,10 @@
                     <li>Отношение партнёра к вам и браку</li>
                     <li>Стоит ли связывать судьбу, дополнительные вопросы</li>
                 </ul>
-                <div class="price-tag">Стоимость: <span>3 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>3 000 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -848,7 +864,10 @@
                     <li>Как улучшить взаимопонимание и в чем будет проявляться жизненная позиция ребенка</li>
                     <li>Здоровье и наиболее полезный вид спорта</li>
                 </ul>
-                <div class="price-tag">Стоимость: <span>2 500 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>2 500 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -861,7 +880,10 @@
                     <li>Рекомендации по планированию</li>
                 </ul>
                 <div class="info-line">💡 <strong>Рекомендую после первой консультации</strong></div>
-                <div class="price-tag">Стоимость: <span>5 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>5 000 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -874,7 +896,10 @@
                     <li>Разбор ситуации</li>
                 </ul>
                 <div class="info-line">💡 <strong>Знать время рождения не нужно</strong></div>
-                <div class="price-tag">Стоимость: <span>1 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>1 000 ₽</span>
+                </div>
             </div>
         </div>
 
