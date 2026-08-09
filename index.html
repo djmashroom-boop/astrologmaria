@@ -282,14 +282,15 @@
             margin: 30px 0 20px 0;
         }
 
+        /* ===== КАРТОЧКИ УСЛУГ ===== */
         .service-card {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(12px);
-            padding: 24px 28px;
-            border-radius: 18px;
-            border-left: 3px solid rgba(212, 175, 55, 0.3);
-            transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 28px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.4s;
             display: flex;
             flex-direction: column;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -310,30 +311,30 @@
         }
 
         .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.4), 0 0 35px rgba(212, 175, 55, 0.08);
+            transform: translateY(-6px);
             background: rgba(255, 255, 255, 0.18);
-            border-color: rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.06);
         }
 
         .service-card h3 {
             font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 20px;
+            font-size: 24px;
             color: #e8c87a;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             font-weight: 700;
             letter-spacing: 0.5px;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
         }
 
         .service-card .format {
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
             font-weight: 500;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
         }
 
         .service-card p {
@@ -342,23 +343,23 @@
             color: #ffffff;
             font-weight: 400;
             margin-bottom: 10px;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
         }
 
         .service-card ul {
             text-align: left;
-            padding-left: 0px;
-            margin: 10px 0 0 0;
+            padding-left: 0;
+            margin: 12px 0 0 0;
             font-size: 16px;
             color: #ffffff;
             flex: 1;
             list-style: none;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
         }
 
         .service-card ul li {
-            margin-bottom: 14px;
-            padding-left: 25px;
+            margin-bottom: 12px;
+            padding-left: 28px;
             position: relative;
             font-weight: 400;
             line-height: 1.7;
@@ -366,24 +367,26 @@
 
         .service-card ul li::before {
             content: '●';
-            color: #d4af37;
+            color: #e8c87a;
             font-size: 18px;
             font-weight: bold;
             position: absolute;
             left: 0;
             top: 2px;
+            text-shadow: 0 0 16px rgba(232, 200, 122, 0.2);
         }
 
         .service-card .info-line {
-            margin-top: 12px;
-            padding: 10px 14px;
-            background: rgba(212, 175, 55, 0.1);
+            margin-top: 14px;
+            padding: 12px 16px;
+            background: rgba(212, 175, 55, 0.08);
             border-radius: 12px;
             color: #ffffff;
             font-size: 16px;
             font-weight: 500;
             font-family: 'Montserrat', sans-serif;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.06);
         }
 
         .service-card .info-line strong {
@@ -392,34 +395,34 @@
         }
 
         .price-tag {
-            margin-top: 20px;
-            padding: 10px 16px;
-            background: rgba(212, 175, 55, 0.15);
+            margin-top: 16px;
+            padding: 12px 18px;
+            background: rgba(212, 175, 55, 0.10);
             border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.12);
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
             font-weight: 700;
-            color: #e8c87a;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            transition: 0.3s;
         }
 
-        .price-tag .price-label {
-            color: rgba(255, 255, 255, 0.5);
-            font-weight: 400;
-            font-size: 16px;
-            text-shadow: none;
+        .price-tag:hover {
+            background: rgba(212, 175, 55, 0.16);
+            border-color: rgba(212, 175, 55, 0.25);
         }
 
         .price-tag span {
-            color: #d4af37;
+            color: #e8c87a;
             font-weight: 700;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            font-size: 22px;
+            text-shadow: 0 0 24px rgba(232, 200, 122, 0.15);
         }
 
         .carousel-wrapper {
@@ -512,66 +515,69 @@
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
         }
 
+        /* ===== БЛОК "КАК ПОПАСТЬ" — СВЕТЛЫЙ ===== */
         .how-to-detailed {
-            background: rgba(11, 14, 35, 0.9);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-radius: 20px;
-            padding: 28px 32px;
+            padding: 32px 36px;
             margin: 20px 0 25px 0;
-            border-left: 3px solid rgba(212, 175, 55, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(212, 175, 55, 0.05);
         }
 
         .how-to-detailed h2 {
             font-family: 'Playfair Display', 'Georgia', serif;
             font-size: 28px;
             color: #e8c87a;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             font-weight: 700;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);
+            letter-spacing: 0.5px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
         }
 
         .how-to-detailed ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
         }
 
         .how-to-detailed ul li {
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 16px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
+            font-size: 17px;
             color: #ffffff;
-            margin-bottom: 12px;
-            padding: 14px 20px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: 0.3s;
             font-weight: 400;
-            line-height: 1.7;
-            text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+            line-height: 1.6;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
         }
 
         .how-to-detailed ul li:hover {
-            background: rgba(212, 175, 55, 0.08);
-            border-color: rgba(212, 175, 55, 0.12);
+            background: rgba(212, 175, 55, 0.12);
+            border-color: rgba(212, 175, 55, 0.25);
+            transform: translateY(-2px);
         }
 
         .how-to-detailed ul li .num {
             font-weight: 700;
-            color: #d4af37;
-            font-size: 22px;
-            min-width: 40px;
-            flex-shrink: 0;
-        }
-
-        .how-to-detailed ul li strong {
             color: #e8c87a;
-            font-weight: 700;
+            font-size: 26px;
+            min-width: 44px;
+            flex-shrink: 0;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
         }
 
         .cta-buttons {
@@ -600,7 +606,7 @@
             border: none;
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -698,6 +704,7 @@
             display: flex;
         }
 
+        /* ===== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ===== */
         @media (max-width: 850px) {
             .about-block { flex-direction: column; text-align: center; }
             .about-block img { width: 300px; height: 300px; }
@@ -719,9 +726,48 @@
             .nav-links { gap: 12px; }
             .nav-link { font-size: 15px; padding: 5px 12px; }
             .about-block img { width: 220px; height: 220px; }
-            .service-card h3 { font-size: 20px; }
-            .service-card p, .service-card ul { font-size: 15px; }
-            .service-card ul li { margin-bottom: 12px; }
+            
+            .service-card {
+                padding: 22px 22px;
+            }
+            .service-card h3 {
+                font-size: 22px;
+            }
+            .service-card .format,
+            .service-card p,
+            .service-card ul {
+                font-size: 15px;
+            }
+            .service-card ul li {
+                padding-left: 24px;
+            }
+            .price-tag {
+                font-size: 18px;
+                padding: 10px 14px;
+            }
+            .price-tag span {
+                font-size: 20px;
+            }
+
+            .how-to-detailed {
+                padding: 24px 20px;
+            }
+            .how-to-detailed h2 {
+                font-size: 24px;
+            }
+            .how-to-detailed ul {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .how-to-detailed ul li {
+                font-size: 16px;
+                padding: 14px 18px;
+            }
+            .how-to-detailed ul li .num {
+                font-size: 22px;
+                min-width: 36px;
+            }
+
             .carousel-wrapper { max-width: 100%; padding: 6px; }
             .carousel-btn { width: 38px; height: 38px; font-size: 18px; }
             .carousel-slide { aspect-ratio: 3 / 2; }
@@ -729,8 +775,6 @@
             .button-group { max-width: 100%; }
             .btn { font-size: 17px; padding: 15px 20px; }
             h2 { font-size: 28px; }
-            .how-to-detailed h2 { font-size: 24px; }
-            .how-to-detailed ul li { font-size: 16px; padding: 12px 16px; }
         }
 
         @media (max-width: 480px) {
@@ -744,12 +788,46 @@
             .sky-card { width: 55px; height: 55px; }
             .sky-card .mark { height: 6px; }
             .nav-link { font-size: 13px; padding: 4px 10px; }
-            .service-card { padding: 18px 18px; }
-            .service-card h3 { font-size: 18px; }
-            .service-card ul li { margin-bottom: 10px; }
+            
+            .service-card {
+                padding: 18px 18px;
+            }
+            .service-card h3 {
+                font-size: 20px;
+            }
+            .service-card .format,
+            .service-card p,
+            .service-card ul {
+                font-size: 14px;
+            }
+            .service-card ul li {
+                padding-left: 22px;
+            }
+            .price-tag {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+            .price-tag span {
+                font-size: 18px;
+            }
+
+            .how-to-detailed {
+                padding: 20px 16px;
+            }
+            .how-to-detailed h2 {
+                font-size: 22px;
+            }
+            .how-to-detailed ul li {
+                font-size: 15px;
+                padding: 12px 16px;
+            }
+            .how-to-detailed ul li .num {
+                font-size: 20px;
+                min-width: 32px;
+            }
+
             .btn { font-size: 15px; padding: 12px 16px; }
             .carousel-btn { width: 32px; height: 32px; font-size: 16px; }
-            .price-tag { font-size: 18px; }
             .footer-note { font-size: 13px; }
         }
 
@@ -833,10 +911,7 @@
                     <li>Рассматриваю все сферы жизни: здоровье, семья, отношения, брак, партнеры, деньги, бизнес, карьера</li>
                     <li>А также характер, психологические аспекты, духовное развитие, кармическое предназначение и дополнительные вопросы</li>
                 </ul>
-                <div class="price-tag">
-                    <span class="price-label">Стоимость:</span>
-                    <span>5 000 ₽</span>
-                </div>
+                <div class="price-tag">Стоимость: <span>5 000 ₽</span></div>
             </div>
 
             <div class="service-card">
@@ -848,10 +923,7 @@
                     <li>Отношение партнёра к вам и браку</li>
                     <li>Стоит ли связывать судьбу, дополнительные вопросы</li>
                 </ul>
-                <div class="price-tag">
-                    <span class="price-label">Стоимость:</span>
-                    <span>3 000 ₽</span>
-                </div>
+                <div class="price-tag">Стоимость: <span>3 000 ₽</span></div>
             </div>
 
             <div class="service-card">
@@ -864,10 +936,7 @@
                     <li>Как улучшить взаимопонимание и в чем будет проявляться жизненная позиция ребенка</li>
                     <li>Здоровье и наиболее полезный вид спорта</li>
                 </ul>
-                <div class="price-tag">
-                    <span class="price-label">Стоимость:</span>
-                    <span>2 500 ₽</span>
-                </div>
+                <div class="price-tag">Стоимость: <span>2 500 ₽</span></div>
             </div>
 
             <div class="service-card">
@@ -880,10 +949,7 @@
                     <li>Рекомендации по планированию</li>
                 </ul>
                 <div class="info-line">💡 <strong>Рекомендую после первой консультации</strong></div>
-                <div class="price-tag">
-                    <span class="price-label">Стоимость:</span>
-                    <span>5 000 ₽</span>
-                </div>
+                <div class="price-tag">Стоимость: <span>5 000 ₽</span></div>
             </div>
 
             <div class="service-card">
@@ -896,10 +962,7 @@
                     <li>Разбор ситуации</li>
                 </ul>
                 <div class="info-line">💡 <strong>Знать время рождения не нужно</strong></div>
-                <div class="price-tag">
-                    <span class="price-label">Стоимость:</span>
-                    <span>1 000 ₽</span>
-                </div>
+                <div class="price-tag">Стоимость: <span>1 000 ₽</span></div>
             </div>
         </div>
 
