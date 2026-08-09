@@ -56,6 +56,7 @@
             z-index: 1;
             pointer-events: none;
             overflow: hidden;
+            opacity: 0.4;
         }
 
         .star {
@@ -98,7 +99,6 @@
             flex-wrap: wrap;
         }
 
-        /* ===== КАРТА НЕБА ===== */
         .logo-container {
             width: 100px;
             height: 100px;
@@ -113,9 +113,9 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            border: 1.5px solid rgba(212, 175, 55, 0.3);
+            border: 1.5px solid rgba(212, 175, 55, 0.35);
             position: relative;
-            background: rgba(212, 175, 55, 0.02);
+            background: rgba(212, 175, 55, 0.03);
             animation: breathe 4s ease-in-out infinite;
         }
 
@@ -178,7 +178,7 @@
             color: #ffffff;
             letter-spacing: 1px;
             margin-bottom: 4px;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
         }
 
         .subtitle {
@@ -215,15 +215,15 @@
             padding: 7px 18px;
             border-radius: 20px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            background: rgba(212, 175, 55, 0.04);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(212, 175, 55, 0.06);
             text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
         .nav-link:hover {
             color: #ffffff;
-            border-color: rgba(212, 175, 55, 0.3);
-            background: rgba(212, 175, 55, 0.12);
+            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.15);
             transform: translateY(-2px);
         }
 
@@ -269,7 +269,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 30px;
             font-weight: 700;
-            color: #d4af37;
+            color: #e8c87a;
             margin-bottom: 25px;
             letter-spacing: 0.5px;
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
@@ -282,11 +282,10 @@
             margin: 30px 0 20px 0;
         }
 
-        /* ===== КАРТОЧКИ УСЛУГ ===== */
         .service-card {
-            background: rgba(255, 255, 255, 0.10);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 28px 30px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -314,27 +313,27 @@
             transform: translateY(-6px);
             background: rgba(255, 255, 255, 0.18);
             border-color: rgba(212, 175, 55, 0.3);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.06);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4), 0 0 50px rgba(212, 175, 55, 0.06);
         }
 
         .service-card h3 {
             font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 24px;
+            font-size: 22px;
             color: #e8c87a;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             font-weight: 700;
             letter-spacing: 0.5px;
-            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+            text-shadow: 0 2px 16px rgba(0,0,0,0.4);
         }
 
         .service-card .format {
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #ffffff;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             letter-spacing: 0.3px;
             font-weight: 500;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
         }
 
         .service-card p {
@@ -343,7 +342,7 @@
             color: #ffffff;
             font-weight: 400;
             margin-bottom: 10px;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
         }
 
         .service-card ul {
@@ -354,15 +353,15 @@
             color: #ffffff;
             flex: 1;
             list-style: none;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
         }
 
         .service-card ul li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             padding-left: 28px;
             position: relative;
             font-weight: 400;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .service-card ul li::before {
@@ -373,7 +372,7 @@
             position: absolute;
             left: 0;
             top: 2px;
-            text-shadow: 0 0 16px rgba(232, 200, 122, 0.2);
+            text-shadow: 0 0 16px rgba(232, 200, 122, 0.15);
         }
 
         .service-card .info-line {
@@ -385,7 +384,7 @@
             font-size: 16px;
             font-weight: 500;
             font-family: 'Montserrat', sans-serif;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
             border: 1px solid rgba(212, 175, 55, 0.06);
         }
 
@@ -395,11 +394,11 @@
         }
 
         .price-tag {
-            margin-top: 16px;
-            padding: 12px 18px;
-            background: rgba(212, 175, 55, 0.10);
-            border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.12);
+            margin-top: 18px;
+            padding: 14px 20px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
@@ -409,20 +408,33 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
             transition: 0.3s;
         }
 
         .price-tag:hover {
-            background: rgba(212, 175, 55, 0.16);
-            border-color: rgba(212, 175, 55, 0.25);
+            background: rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.35);
+        }
+
+        .price-tag .price-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+            font-size: 16px;
+            text-shadow: none;
         }
 
         .price-tag span {
             color: #e8c87a;
             font-weight: 700;
-            font-size: 22px;
-            text-shadow: 0 0 24px rgba(232, 200, 122, 0.15);
+            font-size: 24px;
+            text-shadow: 0 0 30px rgba(232, 200, 122, 0.2);
+        }
+
+        /* ===== ЯКОРЬ ДЛЯ ГАЛЕРЕИ ===== */
+        #gallery {
+            position: relative;
+            top: -60px;
         }
 
         .carousel-wrapper {
@@ -515,16 +527,16 @@
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
         }
 
-        /* ===== БЛОК "КАК ПОПАСТЬ" — СВЕТЛЫЙ ===== */
+        /* ===== БЛОК "КАК ПОПАСТЬ" — СВЕТЛЫЙ, БЕЗ ПОДЧЁРКИВАНИЯ ===== */
         .how-to-detailed {
-            background: rgba(255, 255, 255, 0.09);
+            background: rgba(255, 255, 255, 0.10);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 20px;
             padding: 32px 36px;
             margin: 20px 0 25px 0;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 60px rgba(212, 175, 55, 0.03);
         }
 
         .how-to-detailed h2 {
@@ -533,18 +545,17 @@
             color: #e8c87a;
             margin-bottom: 22px;
             font-weight: 700;
-            text-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);
+            text-shadow: 0 2px 20px rgba(212, 175, 55, 0.15);
             letter-spacing: 0.5px;
             padding-bottom: 14px;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
         }
 
         .how-to-detailed ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 14px;
         }
 
@@ -556,9 +567,9 @@
             font-size: 17px;
             color: #ffffff;
             padding: 16px 20px;
-            background: rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             transition: 0.3s;
             font-weight: 400;
             line-height: 1.6;
@@ -566,8 +577,8 @@
         }
 
         .how-to-detailed ul li:hover {
-            background: rgba(212, 175, 55, 0.12);
-            border-color: rgba(212, 175, 55, 0.25);
+            background: rgba(212, 175, 55, 0.10);
+            border-color: rgba(212, 175, 55, 0.2);
             transform: translateY(-2px);
         }
 
@@ -577,7 +588,7 @@
             font-size: 26px;
             min-width: 44px;
             flex-shrink: 0;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
         }
 
         .cta-buttons {
@@ -606,7 +617,7 @@
             border: none;
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -614,26 +625,43 @@
             text-align: center;
             letter-spacing: 0.5px;
             text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .btn:hover::after {
+            opacity: 1;
         }
 
         .btn-telegram {
-            background-color: #1FA2E1;
-            box-shadow: 0 6px 20px rgba(31, 162, 225, 0.4);
+            background: linear-gradient(135deg, #2AABEE, #1A8BC4);
+            box-shadow: 0 6px 30px rgba(42, 171, 238, 0.35);
         }
         .btn-telegram:hover {
             transform: translateY(-3px);
-            background-color: #2db2f0;
-            box-shadow: 0 10px 30px rgba(31, 162, 225, 0.6);
+            box-shadow: 0 12px 40px rgba(42, 171, 238, 0.5);
         }
 
         .btn-max {
-            background-color: #7E3AF2;
-            box-shadow: 0 6px 20px rgba(126, 58, 242, 0.4);
+            background: linear-gradient(135deg, #8B5CF6, #6D3BC6);
+            box-shadow: 0 6px 30px rgba(139, 92, 246, 0.35);
         }
         .btn-max:hover {
             transform: translateY(-3px);
-            background-color: #9050ff;
-            box-shadow: 0 10px 30px rgba(126, 58, 242, 0.6);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
         }
 
         .social-wrapper {
@@ -704,7 +732,10 @@
             display: flex;
         }
 
-        /* ===== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ===== */
+        /* ============================================================
+                   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ
+                   ============================================================ */
+
         @media (max-width: 850px) {
             .about-block { flex-direction: column; text-align: center; }
             .about-block img { width: 300px; height: 300px; }
@@ -728,27 +759,54 @@
             .about-block img { width: 220px; height: 220px; }
             
             .service-card {
-                padding: 22px 22px;
+                padding: 24px 20px;
+                background: rgba(255, 255, 255, 0.18);
             }
             .service-card h3 {
                 font-size: 22px;
             }
-            .service-card .format,
-            .service-card p,
+            .service-card .format {
+                font-size: 16px;
+            }
+            .service-card p {
+                font-size: 16px;
+            }
             .service-card ul {
-                font-size: 15px;
+                font-size: 16px;
             }
             .service-card ul li {
-                padding-left: 24px;
+                font-size: 16px;
+                padding-left: 28px;
+                line-height: 1.8;
             }
-            .price-tag {
-                font-size: 18px;
-                padding: 10px 14px;
-            }
-            .price-tag span {
+            .service-card ul li::before {
                 font-size: 20px;
             }
+            .service-card .info-line {
+                font-size: 16px;
+                padding: 12px 16px;
+            }
+            
+            .price-tag {
+                font-size: 20px;
+                padding: 12px 16px;
+                gap: 12px;
+            }
+            .price-tag .price-label {
+                font-size: 16px;
+            }
+            .price-tag span {
+                font-size: 24px;
+            }
 
+            .carousel-wrapper { max-width: 100%; padding: 6px; }
+            .carousel-btn { width: 38px; height: 38px; font-size: 18px; }
+            .carousel-slide { aspect-ratio: 3 / 2; }
+            .btn-up { bottom: 90px; right: 22px; width: 48px; height: 48px; font-size: 20px; }
+            .button-group { max-width: 100%; }
+            .btn { font-size: 17px; padding: 15px 20px; }
+            h2 { font-size: 28px; }
+            
             .how-to-detailed {
                 padding: 24px 20px;
             }
@@ -756,7 +814,6 @@
                 font-size: 24px;
             }
             .how-to-detailed ul {
-                grid-template-columns: 1fr;
                 gap: 12px;
             }
             .how-to-detailed ul li {
@@ -767,14 +824,6 @@
                 font-size: 22px;
                 min-width: 36px;
             }
-
-            .carousel-wrapper { max-width: 100%; padding: 6px; }
-            .carousel-btn { width: 38px; height: 38px; font-size: 18px; }
-            .carousel-slide { aspect-ratio: 3 / 2; }
-            .btn-up { bottom: 90px; right: 22px; width: 48px; height: 48px; font-size: 20px; }
-            .button-group { max-width: 100%; }
-            .btn { font-size: 17px; padding: 15px 20px; }
-            h2 { font-size: 28px; }
         }
 
         @media (max-width: 480px) {
@@ -790,27 +839,52 @@
             .nav-link { font-size: 13px; padding: 4px 10px; }
             
             .service-card {
-                padding: 18px 18px;
+                padding: 20px 16px;
+                background: rgba(255, 255, 255, 0.22);
             }
             .service-card h3 {
                 font-size: 20px;
             }
-            .service-card .format,
-            .service-card p,
+            .service-card .format {
+                font-size: 15px;
+            }
+            .service-card p {
+                font-size: 15px;
+            }
             .service-card ul {
-                font-size: 14px;
+                font-size: 15px;
             }
             .service-card ul li {
-                padding-left: 22px;
+                font-size: 15px;
+                padding-left: 26px;
+                margin-bottom: 12px;
+                line-height: 1.8;
             }
-            .price-tag {
-                font-size: 16px;
-                padding: 8px 12px;
-            }
-            .price-tag span {
+            .service-card ul li::before {
                 font-size: 18px;
             }
+            .service-card .info-line {
+                font-size: 15px;
+                padding: 10px 14px;
+            }
+            
+            .price-tag {
+                font-size: 18px;
+                padding: 10px 14px;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .price-tag .price-label {
+                font-size: 15px;
+            }
+            .price-tag span {
+                font-size: 22px;
+            }
 
+            .btn { font-size: 15px; padding: 12px 16px; }
+            .carousel-btn { width: 32px; height: 32px; font-size: 16px; }
+            .footer-note { font-size: 13px; }
+            
             .how-to-detailed {
                 padding: 20px 16px;
             }
@@ -825,10 +899,6 @@
                 font-size: 20px;
                 min-width: 32px;
             }
-
-            .btn { font-size: 15px; padding: 12px 16px; }
-            .carousel-btn { width: 32px; height: 32px; font-size: 16px; }
-            .footer-note { font-size: 13px; }
         }
 
         p, li, .format, .info-line {
@@ -853,7 +923,6 @@
     <div class="container">
 
         <div class="header-wrapper">
-            <!-- КАРТА НЕБА -->
             <div class="logo-container">
                 <div class="sky-card">
                     <div class="inner-circle-1"></div>
@@ -891,7 +960,7 @@
         <div id="about" class="about-block">
             <img src="photo.jpg" alt="Мария - астролог-консультант">
             <div class="about-text">
-              <p>Меня зовут <span class="school-style">Мария</span>.</p>
+                <p><span class="highlight">Меня зовут Мария.</span></p>
                 <p>Я — <span class="highlight">профессиональный астролог</span>, имею медицинское образование и образование в области маркетинга. За плечами — два года обучения в школе классической астрологии и практика консультирования, плюс большой опыт работы, который научил меня понимать, чего человек хочет на самом деле.</p>
                 <p>Такой путь научил меня видеть человека <span class="highlight">системно</span>: не просто набор планет в карте, а как живую, дышащую личность со своим запросом, болью и потенциалом.</p>
                 <p>Я работаю без эзотерики, по фактам. Моя задача — не предсказывать, а <span class="highlight">показать структуру</span> вашей жизни: где ресурсы, где опоры, где зоны роста.</p>
@@ -911,7 +980,10 @@
                     <li>Рассматриваю все сферы жизни: здоровье, семья, отношения, брак, партнеры, деньги, бизнес, карьера</li>
                     <li>А также характер, психологические аспекты, духовное развитие, кармическое предназначение и дополнительные вопросы</li>
                 </ul>
-                <div class="price-tag">Стоимость: <span>5 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>5 000 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -923,7 +995,10 @@
                     <li>Отношение партнёра к вам и браку</li>
                     <li>Стоит ли связывать судьбу, дополнительные вопросы</li>
                 </ul>
-                <div class="price-tag">Стоимость: <span>3 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>3 000 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -936,7 +1011,10 @@
                     <li>Как улучшить взаимопонимание и в чем будет проявляться жизненная позиция ребенка</li>
                     <li>Здоровье и наиболее полезный вид спорта</li>
                 </ul>
-                <div class="price-tag">Стоимость: <span>2 500 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>2 500 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -949,7 +1027,10 @@
                     <li>Рекомендации по планированию</li>
                 </ul>
                 <div class="info-line">💡 <strong>Рекомендую после первой консультации</strong></div>
-                <div class="price-tag">Стоимость: <span>5 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>5 000 ₽</span>
+                </div>
             </div>
 
             <div class="service-card">
@@ -962,11 +1043,15 @@
                     <li>Разбор ситуации</li>
                 </ul>
                 <div class="info-line">💡 <strong>Знать время рождения не нужно</strong></div>
-                <div class="price-tag">Стоимость: <span>1 000 ₽</span></div>
+                <div class="price-tag">
+                    <span class="price-label">Стоимость:</span>
+                    <span>1 000 ₽</span>
+                </div>
             </div>
         </div>
 
-        <!-- Заголовок "Галерея" убран, остался только блок с фото -->
+        <div id="gallery" style="position: relative; top: -60px;"></div>
+
         <div class="carousel-wrapper" id="carousel">
             <div class="carousel-track" id="carouselTrack">
                 <div class="carousel-slide">
@@ -978,7 +1063,6 @@
                 <div class="carousel-slide">
                     <img src="photo3.jpg" alt="Фото 3" loading="lazy">
                 </div>
-                <!-- 4-й слайд удалён -->
             </div>
             <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Предыдущее фото">‹</button>
             <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Следующее фото">›</button>
